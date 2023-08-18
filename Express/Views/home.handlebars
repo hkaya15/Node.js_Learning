@@ -1,0 +1,14 @@
+
+<body>
+    {{#if hasProducts}}
+    <h1>Hello from HTML Products</h1>
+    {{#each products}}
+     <div>
+        <h1>{{this.name}}</h1>
+        <p>{{this.price}}</p>
+     </div>
+    {{/each}}
+    {{else}}
+    <h1>No Products</h1>
+    {{/if}}
+</body>
