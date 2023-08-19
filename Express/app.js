@@ -4,14 +4,15 @@ const oneMid = require('./Routes/one')
 const rootDir = require('../Express/Util/path')
 const app = express();
 
-const expressHbs=require("express-handlebars");
-app.engine('handlebars',expressHbs({layoutsDir: 'Views/Layouts/',defaultLayout: 'main-layout',extname:'handlebars'})); // Template Engine settings for Handlebars
-app.set('view engine','handlebars') 
+// const expressHbs=require("express-handlebars");
+// app.engine('handlebars',expressHbs({layoutsDir: 'Views/Layouts/',defaultLayout: 'main-layout',extname:'handlebars'})); // Template Engine settings for Handlebars
+// app.set('view engine','handlebars') 
 
 const name="Huseyin";
 const products=[{name:"Apple", price:12},{name:"Orange", price:25}]
 
 // app.set('view engine', 'pug'); // Template Engine settings for pug
+app.set('view engine','ejs'); // Template Engine settings for EJS
 app.set('views', 'Views');
 
 app.use(express.static(path.join(__dirname, 'public'))); // External CSS Import
