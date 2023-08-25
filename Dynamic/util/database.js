@@ -9,4 +9,9 @@ const pool = mysql.createPool({
     password: process.env.DB_PASSWORD
 });
 
+const getProductsFromDB = async function getProductsFromDB() {
+    const [rows] = await pool.query("SELECT * FROM products");
+    return rows
+}
+
 module.exports = pool.promise();
